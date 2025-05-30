@@ -21,7 +21,7 @@ export default function DashboardPage() {
     <div className="flex flex-col gap-5">
       <PageHeader
         title="Dashboard"
-        description="Welcome to the Rareminds Labs admin dashboard."
+        description="Welcome to the Rareminds admin dashboard."
       />
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

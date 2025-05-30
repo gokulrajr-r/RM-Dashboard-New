@@ -10,7 +10,7 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600" />
         <div className="relative z-20 flex items-center text-lg font-medium">
           <PenTool className="mr-2 h-6 w-6" />
-          Rareminds Labs
+          Rareminds
         </div>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">

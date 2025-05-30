@@ -7,8 +7,8 @@ import { AuthProvider } from '@/lib/hooks/use-auth';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Rareminds Labs Admin',
-  description: 'Admin dashboard for Rareminds Labs',
+  title: 'Rareminds Admin',
+  description: 'Admin dashboard for Rareminds',
 };
 
 export default function RootLayout({

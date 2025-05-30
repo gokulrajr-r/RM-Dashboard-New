@@ -119,7 +119,7 @@ export function Sidebar({ className }: SidebarProps) {
         <div className="flex h-16 items-center border-b px-6">
           <Link href="/dashboard" className="flex items-center gap-2 font-bold">
             <PenTool className="h-6 w-6 text-primary" />
-            <span>Rareminds Labs</span>
+            <span>Rareminds</span>
           </Link>
           <Button
             variant="ghost"
