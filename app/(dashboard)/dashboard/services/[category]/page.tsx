@@ -1,5 +1,7 @@
 import { PageHeader } from "@/components/dashboard/page-header";
 import CategoryServicesTable from "./CategoryServicesTable";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   params: { category: string };
@@ -12,19 +14,21 @@ export default function ServicesByCategoryPage({ params }: Props) {
       <PageHeader
         title={`${category} Services`}
         description={`Manage all services under the ${category} category.`}
+        actions={
+          <Button asChild>
+            <Link href={`/dashboard/services/${category}/create`}>
+              Create New Service
+            </Link>
+          </Button>
+        }
       />
       <CategoryServicesTable category={category} />
     </div>
   );
 }
 
+import { getCategoryParams } from '@/lib/config/services';
+
 export async function generateStaticParams() {
-  // List all categories you want to statically generate (lowercase for route matching)
-  return [
-    { category: 'recruitment' },
-    { category: 'training' },
-    { category: 'design' },
-    { category: 'development' },
-    { category: 'marketing' },
-  ];
+  return getCategoryParams();
 }

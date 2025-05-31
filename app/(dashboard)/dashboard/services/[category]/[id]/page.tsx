@@ -33,15 +33,8 @@ export default function ServicePage({ params }: Props) {
   );
 }
 
+import { getServiceParams } from '@/lib/config/services';
+
 export async function generateStaticParams() {
-  // In a real app, fetch these from your database
-  return [
-    { category: 'design', id: '1' },
-    { category: 'development', id: '2' },
-    { category: 'development', id: '3' },
-    { category: 'marketing', id: '4' },
-    { category: 'marketing', id: '5' },
-    { category: 'recruitment', id: '6' },
-    { category: 'training', id: '7' },
-  ];
+  return getServiceParams();
 }

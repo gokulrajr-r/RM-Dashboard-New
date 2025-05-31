@@ -23,8 +23,13 @@ import { toast } from 'sonner';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { slugify } from '@/lib/utils/format';
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css';
 
 type FormValues = z.infer<typeof serviceSchema>;
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false, loading: () => <div>Loading editor...</div> });
 
 export default function CreateServicePage() {
   const router = useRouter();
@@ -134,10 +139,11 @@ export default function CreateServicePage() {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Textarea
-                      placeholder="Describe your service..."
-                      className="min-h-32"
-                      {...field}
+                    <ReactQuill
+                      theme="snow"
+                      value={field.value}
+                      onChange={field.onChange}
+                      className="min-h-32 bg-white"
                     />
                   </FormControl>
                   <FormDescription>
